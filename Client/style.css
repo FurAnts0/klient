@@ -288,3 +288,32 @@ section {
     }
 }
 
+
+
+
+
+
+
+
+
+.offer-box .details {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #ccc;
+    text-align: left;
+}
+
+.offer-box .payment-details {
+    margin-top: 10px;
+}
+
+.offer-box .payment-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.offer-box .payment-details ul li {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 5px;
+}
