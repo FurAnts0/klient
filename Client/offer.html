@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer - Paradise in Heaven</title>
+    <link rel="stylesheet" href="style.css"> <!-- Same CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Styles for the Hero Section */
+        .hero {
+            padding: 60px 10%;
+            text-align: center;
+            background-color: #f5f5f5; /* Light background for the hero section */
+        }
+
+        .offer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns layout for larger screens */
+            gap: 2rem;
+            padding-top: 30px;
+            justify-items: center;
+        }
+
+        .offer-box {
+            background-color: #2a2a2a;
+            color: var(--text-color);
+            border-radius: 8px;
+            padding: 10px;
+            width: 220px; /* Smaller box size */
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none; /* Remove underline from links */
+            position: relative;
+        }
+
+        .offer-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; /* Ensures the image covers the area without distorting */
+            border-radius: 8px;
+        }
+
+        .offer-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-box h3 {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: var(--main-color);
+        }
+
+        .offer-box p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .offer-box .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        /* Responsive Design: Adjust for small devices */
+        @media (max-width: 1200px) {
+            .offer-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .offer-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+            }
+
+            .offer-box {
+                width: 100%; /* Make each box take full width */
+                padding: 15px;
+            }
+
+            .offer-box h3 {
+                font-size: 1.1rem;
+            }
+
+            .offer-box p {
+                font-size: 0.95rem;
+            }
+
+            .offer-box .price {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .offer-container {
+                grid-template-columns: 1fr; /* Stack all boxes vertically on very small screens */
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .offer-box {
+                width: 100%; /* Ensure full width on very small screens */
+            }
+
+            .offer-box h3 {
+                font-size: 1rem; /* Further reduce heading size */
+            }
+
+            .offer-box p {
+                font-size: 0.9rem;
+            }
+
+            .offer-box .price {
+                font-size: 1rem;
+            }
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            z-index: 999;
+            transform: translateX(-100%); /* Initially hide the sidebar */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar.active {
+            transform: translateX(0); /* Slide in the sidebar */
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar a:hover {
+            color: var(--main-color);
+        }
+
+        /* Navbar and Menu Icon Styles */
+        .navlist {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navlist li {
+            display: inline-block;
+        }
+
+        .bx-menu {
+            font-size: 30px;
+            display: block; /* Show the hamburger menu on all screens */
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navlist {
+                display: none; /* Hide the normal nav list on smaller screens */
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+
+            .navlist.active {
+                display: flex; /* Show the navlist when the menu is active */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="about.html">About</a>
+        <a href="offer.html">Offer</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="" alt="logo"> <!-- Change to your logo image -->
+        </a>
+        <ul class="navlist">
+            <li><a href="about.html">About</a></li>
+            <li><a href="offer.html">Offer</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="right-content">
+            <a href="#" class="nav-btn">Sign In</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div> 
+    </header>
+
+    <!-- Offer Section (Hero Section with Offer Boxes inside it) -->
+    <section class="hero">
+        <div class="hero-text">
+            <p>Click Each Box to know more<p>
+        </div>
+        <div class="offer-container">
+            <!-- Mausoleum Box -->
+            <a href="mausoleum.html" class="offer-box">
+                <img src="mausoleum.jpg" alt="Mausoleum Image"> <!-- Insert your Mausoleum image -->
+                <h3>Mausoleum</h3>
+                <p>A private, elegant resting place for your loved ones.</p>
+                <div class="price">$5,000</div>
+            </a>
+
+            <!-- Stone Box -->
+            <a href="stone.html" class="offer-box">
+                <img src="stone.jpg" alt="Stone Image"> <!-- Insert your Stone image -->
+                <h3>Stone</h3>
+                <p>Simple and dignified stone plots for eternal rest.</p>
+                <div class="price">$2,500</div>
+            </a>
+
+            <!-- Lawn Box -->
+            <a href="lawn.html" class="offer-box">
+                <img src="lawn.jpg" alt="Lawn Image"> <!-- Insert your Lawn image -->
+                <h3>Lawn</h3>
+                <p>Serene lawn plots in a peaceful setting.</p>
+                <div class="price">$1,200</div>
+            </a>
+
+            <!-- Valor Box -->
+            <a href="valor.html" class="offer-box">
+                <img src="valor.jpg" alt="Valor Image"> <!-- Insert your Valor image -->
+                <h3>Valor</h3>
+                <p>A special offer for heroes and veterans.</p>
+                <div class="price">$3,000</div>
+            </a>
+        </div> <!-- End of offer-container -->
+    </section> <!-- End of hero section -->
+
+    <!-- Scroll Down Section -->
+    <div class="scroll">
+        <a href="#about">
+            <i class="ri-scroll-to-bottom-line"></i>
+            Scroll Down
+        </a>
+    </div>
+
+    <script>
+        // Toggle Sidebar on mobile
+        const menuIcon = document.getElementById("menu-icon");
+        const sidebar = document.getElementById("sidebar");
+        const navlist = document.querySelector('.navlist');
+
+        menuIcon.addEventListener("click", () => {
+            sidebar.classList.toggle("active"); // Toggle sidebar visibility
+            navlist.classList.toggle("active"); // Show nav items when sidebar is active
+        });
+    </script>
+</body>
+</html>
