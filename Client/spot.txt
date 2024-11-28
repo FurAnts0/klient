@@ -1,0 +1,20 @@
+<div class="details">
+        <p><strong>Dimension:</strong> 1.25m X 2.70m</p>
+        <p><strong>Accommodation:</strong> Can accommodate 2 fresh bodies</p>
+        <div class="payment-details">
+            <p><strong>Spot-cash Computation</strong></p>
+            <ul>
+                <li><strong>Price:</strong> 45, 000.00</li>
+                <li><strong>Less:</strong> 4, 500.00</li>
+                <li><strong>Total Spot-cash Ammount:</strong> 45, 000.00</li>
+                <p><strong>Installment Computation</strong></p>
+                <li><strong>Price:</strong> 45, 000.00</li>
+                <li><strong>20% Down Payment:</strong> 9, 000.00</li>
+                <li><strong>Less:Reservation fee</strong> 5, 000.00</li>
+                <li><strong>Balance in Down Payment:</strong> 4, 000.00</li>
+                <li><strong>DP Payable up to 3 months:</strong> 1, 333.33</li>
+                <li><strong>80% Balance:</strong> 36, 000.00</li>
+                <li><strong>Payable up to 9 months:</strong> 4, 000.00</li>
+            </ul>
+        </div>
+    </div>
